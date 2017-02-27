@@ -29,7 +29,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "<h1> {{titulo}} </h1>\n\t\t\t\t    <ul>\n\t\t\t\t\t\t<li> Titulo : <strong>{{pelicula}}</strong> </li>\n\t\t\t\t\t\t<li> Director: <strong>{{director}}</strong> </li>\n\t\t\t\t\t\t<li> A\u00F1o: <Strong>{{anio}}</Strong> </li>\n\t\t\t\t\t</ul>\n    \t\t    \t",
+                        templateUrl: 'app/views/extrenos.html',
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
