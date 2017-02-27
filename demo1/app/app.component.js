@@ -21,11 +21,15 @@ System.register(['angular2/core'], function(exports_1, context_1) {
             // Decorador component, indicamos en que etiqueta se va a cargar la plantilla
             AppComponent = (function () {
                 function AppComponent() {
+                    this.titulo = "Extremos 2017";
+                    this.pelicula = "La Iliada - Homero ";
+                    this.director = "Homero Director";
+                    this.anio = 2010;
                 }
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: '<h1>Hola mundo con Angular 2 !! @armandoaepp</h1>'
+                        template: "<h1> {{titulo}} </h1>\n\t\t\t\t    <ul>\n\t\t\t\t\t\t<li> Titulo : <strong>{{pelicula}}</strong> </li>\n\t\t\t\t\t\t<li> Director: <strong>{{director}}</strong> </li>\n\t\t\t\t\t\t<li> A\u00F1o: <Strong>{{anio}}</Strong> </li>\n\t\t\t\t\t</ul>\n    \t\t    \t",
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
