@@ -22,10 +22,14 @@ System.register(['angular2/core'], function(exports_1, context_1) {
             AppComponent = (function () {
                 function AppComponent() {
                     this.titulo = "Extremos 2017";
+                    this.titulo = "Extremos 2017";
                     this.pelicula = "La Iliada - Homero ";
                     this.director = "Homero Director";
                     this.anio = 2010;
                 }
+                AppComponent.prototype.holaMundo = function () {
+                    alert("Pelicula: " + this.pelicula + "Director: " + this.director + " Año: " + this.anio);
+                };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
