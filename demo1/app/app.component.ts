@@ -5,27 +5,25 @@ import{Pelicula} from './model/pelicula';
 @Component({
     selector: 'my-app',
     templateUrl: 'app/views/extrenos.html',
+    styleUrls: ['../assets/css/style.css']
 })
 
 // Clase del componente donde iran los datos y funcionalidades
 export class AppComponent {
 	public titulo:string   = "Extremos 2017" ;
-	public pelicula:string ;
-	public director:string ;
-	public anio:number     ;
+
+	public pelicula:Pelicula ;
 
 	public constructor()
 	{
-
-		this.titulo   = "Extremos 2017" ;
-		this.pelicula = "La Iliada - Homero ";
-		this.director = "Homero Director" ;
-		this.anio     = 2010 ;
+		this.pelicula =  new Pelicula(1,"La Odisea", "Homero", 2011)
+		this.debug();
 	}
 
-	holaMundo()
+	debug()
 	{
-		alert("Pelicula: "+this.pelicula + "Director: "+this.director + " Año: "+this.anio);
+		// console.log("Pelicula: "+this.pelicula + "Director: "+this.director + " Año: "+this.anio);
+		console.log(this.pelicula);
 	}
 
 }
