@@ -13,17 +13,29 @@ export class AppComponent {
 	public titulo:string   = "Extremos 2017" ;
 
 	public pelicula:Pelicula ;
+	public mostrarDatos:boolean ;
 
 	public constructor()
 	{
+		this.mostrarDatos =  true ;
 		this.pelicula =  new Pelicula(1,"La Odisea", "Homero", 2011)
 		this.debug();
 	}
 
-	debug()
+	debug(titulo =  null )
 	{
+		if(titulo != null) {
+			console.log(this.pelicula.titulo);
+		}
+		else
+		{
+			console.log(this.pelicula);
+		}
 		// console.log("Pelicula: "+this.pelicula + "Director: "+this.director + " Año: "+this.anio);
-		console.log(this.pelicula);
+	}
+	onShowHide()
+	{
+		this.mostrarDatos =  !this.mostrarDatos ;
 	}
 
 }

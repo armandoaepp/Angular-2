@@ -1,7 +1,14 @@
 	Template
 	<h1> {{titulo}} </h1>
-	<ul>
+	<button (click)="onShowHide()"  > Mostrar Datos </button>
+
+	<ul *ngIf="mostrarDatos === true ">
 		<li> Titulo : <strong>{{pelicula.titulo}}</strong> </li>
 		<li> Director: <strong>{{pelicula.director}}</strong> </li>
 		<li> Año: <Strong>{{pelicula.anio}}</Strong> </li>
 	</ul>
+
+<p>
+	Cambiar Titulo:
+	<input type="text" (keypress)="debug(true)" [(ngModel)]="pelicula.titulo" >
+</p>
