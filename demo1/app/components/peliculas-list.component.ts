@@ -12,6 +12,7 @@ import{Pelicula} from '../model/pelicula';
 // Clase del componente donde iran los datos y funcionalidades
 export class PeliculasListComponent {
 
+	public peliculaElegida:Pelicula ;
 	public pelicula:Pelicula ;
 	public mostrarDatos:boolean ;
 	public peliculas ;
@@ -19,7 +20,7 @@ export class PeliculasListComponent {
 	public constructor()
 	{
 		this.mostrarDatos =  true ;
-		this.pelicula =  new Pelicula(1,"La Odisea", "Homero", 2011)
+
 		this.debug();
 
 		this.peliculas = [
@@ -30,6 +31,8 @@ export class PeliculasListComponent {
 							new Pelicula(5,"La Odisea 5", "Homero", 2014),
 							new Pelicula(6,"La Odisea 6", "Homero", 2015),
 						] ;
+		this.pelicula =  this.peliculas[0];
+		this.peliculaElegida =  this.peliculas[0];
 	}
 
 	debug(titulo =  null )
@@ -46,6 +49,11 @@ export class PeliculasListComponent {
 	onShowHide()
 	{
 		this.mostrarDatos =  !this.mostrarDatos ;
+	}
+
+	onCambiarPelicula(pelicula){
+		this.pelicula =  pelicula ;
+		this.peliculaElegida =  pelicula ;
 	}
 
 }

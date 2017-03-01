@@ -24,7 +24,6 @@ System.register(['angular2/core', '../model/pelicula'], function(exports_1, cont
             PeliculasListComponent = (function () {
                 function PeliculasListComponent() {
                     this.mostrarDatos = true;
-                    this.pelicula = new pelicula_1.Pelicula(1, "La Odisea", "Homero", 2011);
                     this.debug();
                     this.peliculas = [
                         new pelicula_1.Pelicula(1, "La Odisea 1", "Homero", 2010),
@@ -34,6 +33,8 @@ System.register(['angular2/core', '../model/pelicula'], function(exports_1, cont
                         new pelicula_1.Pelicula(5, "La Odisea 5", "Homero", 2014),
                         new pelicula_1.Pelicula(6, "La Odisea 6", "Homero", 2015),
                     ];
+                    this.pelicula = this.peliculas[0];
+                    this.peliculaElegida = this.peliculas[0];
                 }
                 PeliculasListComponent.prototype.debug = function (titulo) {
                     if (titulo === void 0) { titulo = null; }
@@ -47,6 +48,10 @@ System.register(['angular2/core', '../model/pelicula'], function(exports_1, cont
                 };
                 PeliculasListComponent.prototype.onShowHide = function () {
                     this.mostrarDatos = !this.mostrarDatos;
+                };
+                PeliculasListComponent.prototype.onCambiarPelicula = function (pelicula) {
+                    this.pelicula = pelicula;
+                    this.peliculaElegida = pelicula;
                 };
                 PeliculasListComponent = __decorate([
                     core_1.Component({
