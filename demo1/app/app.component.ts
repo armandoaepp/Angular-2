@@ -14,12 +14,22 @@ export class AppComponent {
 
 	public pelicula:Pelicula ;
 	public mostrarDatos:boolean ;
+	public peliculas:Array<string> ;
 
 	public constructor()
 	{
 		this.mostrarDatos =  true ;
 		this.pelicula =  new Pelicula(1,"La Odisea", "Homero", 2011)
 		this.debug();
+
+		this.peliculas = [
+							new Pelicula(1,"La Odisea 1", "Homero", 2010),
+							new Pelicula(1,"La Odisea 2", "Homero",""),
+							new Pelicula(1,"La Odisea 3", "Homero", 2012),
+							new Pelicula(1,"La Odisea 4", "Homero", 2013),
+							new Pelicula(1,"La Odisea 5", "Homero", 2014),
+							new Pelicula(1,"La Odisea 6", "Homero", 2015),
+						] ;
 	}
 
 	debug(titulo =  null )

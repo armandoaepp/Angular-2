@@ -28,6 +28,14 @@ System.register(['angular2/core', './model/pelicula'], function(exports_1, conte
                     this.mostrarDatos = true;
                     this.pelicula = new pelicula_1.Pelicula(1, "La Odisea", "Homero", 2011);
                     this.debug();
+                    this.peliculas = [
+                        new pelicula_1.Pelicula(1, "La Odisea 1", "Homero", 2010),
+                        new pelicula_1.Pelicula(1, "La Odisea 2", "Homero", ""),
+                        new pelicula_1.Pelicula(1, "La Odisea 3", "Homero", 2012),
+                        new pelicula_1.Pelicula(1, "La Odisea 4", "Homero", 2013),
+                        new pelicula_1.Pelicula(1, "La Odisea 5", "Homero", 2014),
+                        new pelicula_1.Pelicula(1, "La Odisea 6", "Homero", 2015),
+                    ];
                 }
                 AppComponent.prototype.debug = function (titulo) {
                     if (titulo === void 0) { titulo = null; }
