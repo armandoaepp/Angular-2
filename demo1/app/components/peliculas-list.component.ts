@@ -1,12 +1,13 @@
 // Importar el núcleo de Angular
 import {Component} from 'angular2/core';
 import{Pelicula} from '../model/pelicula';
+import{PeliculaService} from '../services/peliculaService';
 
 
 @Component({
     selector: 'peliculas-list',
     templateUrl: 'app/views/peliculas-list.html',
-    styleUrls: ['../assets/css/style.css']
+    providers:[PeliculaService] ,
 })
 
 // Clase del componente donde iran los datos y funcionalidades
@@ -17,8 +18,12 @@ export class PeliculasListComponent {
 	public mostrarDatos:boolean ;
 	public peliculas ;
 
-	public constructor()
+	public datoService ;
+
+	public constructor(private _peliculasService:PeliculaService)
 	{
+		this.datoService = this._peliculasService.getPelicula();
+		console.log(this.datoService);
 		this.mostrarDatos =  true ;
 
 		this.debug();

@@ -1,4 +1,4 @@
-System.register(['angular2/core', '../model/pelicula'], function(exports_1, context_1) {
+System.register(['angular2/core', '../model/pelicula', '../services/peliculaService'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', '../model/pelicula'], function(exports_1, cont
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, pelicula_1;
+    var core_1, pelicula_1, peliculaService_1;
     var PeliculasListComponent;
     return {
         setters:[
@@ -19,10 +19,16 @@ System.register(['angular2/core', '../model/pelicula'], function(exports_1, cont
             },
             function (pelicula_1_1) {
                 pelicula_1 = pelicula_1_1;
+            },
+            function (peliculaService_1_1) {
+                peliculaService_1 = peliculaService_1_1;
             }],
         execute: function() {
             PeliculasListComponent = (function () {
-                function PeliculasListComponent() {
+                function PeliculasListComponent(_peliculasService) {
+                    this._peliculasService = _peliculasService;
+                    this.datoService = this._peliculasService.getPelicula();
+                    console.log(this.datoService);
                     this.mostrarDatos = true;
                     this.debug();
                     this.peliculas = [
@@ -57,9 +63,9 @@ System.register(['angular2/core', '../model/pelicula'], function(exports_1, cont
                     core_1.Component({
                         selector: 'peliculas-list',
                         templateUrl: 'app/views/peliculas-list.html',
-                        styleUrls: ['../assets/css/style.css']
+                        providers: [peliculaService_1.PeliculaService],
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [peliculaService_1.PeliculaService])
                 ], PeliculasListComponent);
                 return PeliculasListComponent;
             }());

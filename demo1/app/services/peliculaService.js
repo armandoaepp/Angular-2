@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1, context_1) {
+System.register(["angular2/core"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -11,27 +11,27 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var PeliculasFooterComponent;
+    var PeliculaService;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            PeliculasFooterComponent = (function () {
-                function PeliculasFooterComponent() {
+            PeliculaService = (function () {
+                function PeliculaService() {
                 }
-                PeliculasFooterComponent = __decorate([
-                    core_1.Component({
-                        selector: 'my-app',
-                        templateUrl: 'app/views/peliculas-footer.html',
-                    }), 
+                PeliculaService.prototype.getPelicula = function () {
+                    return 'Pelicula desde service';
+                };
+                PeliculaService = __decorate([
+                    core_1.Injectable(), 
                     __metadata('design:paramtypes', [])
-                ], PeliculasFooterComponent);
-                return PeliculasFooterComponent;
+                ], PeliculaService);
+                return PeliculaService;
             }());
-            exports_1("PeliculasFooterComponent", PeliculasFooterComponent);
+            exports_1("PeliculaService", PeliculaService);
         }
     }
 });
-//# sourceMappingURL=footer.component.js.map
+//# sourceMappingURL=peliculaService.js.map
